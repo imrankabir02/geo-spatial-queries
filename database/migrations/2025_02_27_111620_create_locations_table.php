@@ -18,9 +18,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::statement('ALTER TABLE locations ADD COLUMN coodinates GEOMETRY(Point, 4326);');
+        DB::statement('ALTER TABLE locations ADD COLUMN coordinates GEOMETRY(Point, 4326);');
 
-        DB::statement('CREATE INDEX locations_coordinates_index ON locations USING GIST (coodinates);');
+        DB::statement('CREATE INDEX locations_coordinates_index ON locations USING GIST (coordinates);');
     }
 
     /**
